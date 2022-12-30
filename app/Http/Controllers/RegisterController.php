@@ -16,7 +16,7 @@ public function store(Request $request){
 
 $this->validate($request,[
 
-'name'=>'required','username'=>'','email'
+'name'=>'required|min:5','username'=>'','email'
 
 ]);
 
