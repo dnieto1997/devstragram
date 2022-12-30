@@ -33,7 +33,7 @@ Registrate en Devstragram
 
 @error('name')
 
-<p>El nombre es obligatorio</p>
+<p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center" >El nombre es obligatorio</p>
     
 @enderror
 </div>
