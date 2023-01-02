@@ -16,8 +16,10 @@ public function store(Request $request){
 
 $this->validate($request,[
 
-'name'=>'required|min:5','username'=>'','email'
-
+'name'=>'required|max:30','username'=>'',
+'email'=>'required|unique:users|email|max:60',
+'username'=>'required|unique:users|min:3|max:20',
+'password'=>'required'
 ]);
 
 }

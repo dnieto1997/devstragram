@@ -25,11 +25,12 @@ Registrate en Devstragram
 <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
 
 
- <form action="{{route('registrar')}}" method="POST">
+ <form action="{{route('registrar')}}" method="POST" novalidate>
     @csrf
 <div class="mb-5">
 <label for="name" class="mb-2 block uppercase text-gray-500 font-bold text-center"> Nombre </label>
-<input id="name" name="name" type="text" placeholder="Nombre" class="border p-3 w-full rounded-lg"/>
+<input id="name" name="name" type="text" placeholder="Nombre" class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror" value={{old('name')}} 
+>
 
 @error('name')
 
@@ -41,16 +42,35 @@ Registrate en Devstragram
 <div class="mb-5">
 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold text-center"> Usuario </label>
 <input id="username" name="username" type="text" placeholder="Usuario" class="border p-3 w-full rounded-lg"/>
+
+@error('username')
+
+<p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center" >{{$message}}</p>
+    
+@enderror
+
 </div>
     
 <div class="mb-5">
 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold text-center">Email </label>
 <input id="email" name="email" type="email" placeholder="Ingrese Correo" class="border p-3 w-full rounded-lg"/>
+
+@error('email')
+
+<p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center" >{{$message}}</p>
+    
+@enderror
 </div>
 
 <div class="mb-5">
 <label for="password" class="mb-2 block uppercase text-gray-500 font-bold text-center">Password </label>
 <input id="password" name="password" type="password" placeholder="Password" class="border p-3 w-full rounded-lg"/>
+
+@error('password')
+
+<p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center" >{{$message}}</p>
+    
+@enderror
 </div>
 
 <div class="mb-5">
