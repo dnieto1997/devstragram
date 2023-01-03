@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Stringable;
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -14,6 +18,10 @@ class RegisterController extends Controller
 public function store(Request $request){
    
 
+
+$request->request->add(['username'=> Str::slug($request->username)]);
+
+
 $this->validate($request,[
 
 'name'=>'required|max:30','username'=>'',
@@ -22,8 +30,18 @@ $this->validate($request,[
 'password'=>'required|confirmed|min:6'
 ]);
 
+User::create([
 
-dd('creando usuario');
+    'name'=> $request->name,
+    'username'=> $request->username ,
+    'email'=> $request->email,
+    'password'=> Hash::make($request->password)
+
+
+
+]);
+
+return redirect()-> route('posts.index');
 
 }
 
