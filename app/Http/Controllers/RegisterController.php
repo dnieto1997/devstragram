@@ -19,8 +19,11 @@ $this->validate($request,[
 'name'=>'required|max:30','username'=>'',
 'email'=>'required|unique:users|email|max:60',
 'username'=>'required|unique:users|min:3|max:20',
-'password'=>'required'
+'password'=>'required|confirmed|min:6'
 ]);
+
+
+dd('creando usuario');
 
 }
 

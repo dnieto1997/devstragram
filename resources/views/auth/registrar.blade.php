@@ -29,8 +29,8 @@ Registrate en Devstragram
     @csrf
 <div class="mb-5">
 <label for="name" class="mb-2 block uppercase text-gray-500 font-bold text-center"> Nombre </label>
-<input id="name" name="name" type="text" placeholder="Nombre" class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror" value={{old('name')}} 
->
+<input id="name" name="name" type="text" placeholder="Nombre" class="border p-3 w-full rounded-lg @error('name')
+ border-red-500 @enderror" value={{old('name')}} >
 
 @error('name')
 
@@ -41,7 +41,8 @@ Registrate en Devstragram
 
 <div class="mb-5">
 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold text-center"> Usuario </label>
-<input id="username" name="username" type="text" placeholder="Usuario" class="border p-3 w-full rounded-lg"/>
+<input id="username" name="username" type="text" placeholder="Usuario" class="border p-3 w-full rounded-lg @error('username')
+border-red-500 @enderror" value={{old('username')}} >
 
 @error('username')
 
@@ -53,7 +54,8 @@ Registrate en Devstragram
     
 <div class="mb-5">
 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold text-center">Email </label>
-<input id="email" name="email" type="email" placeholder="Ingrese Correo" class="border p-3 w-full rounded-lg"/>
+<input id="email" name="email" type="email" placeholder="Ingrese Correo" class="border p-3 w-full rounded-lg @error('email')
+border-red-500 @enderror" value={{old('email')}} >
 
 @error('email')
 
