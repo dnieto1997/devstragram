@@ -6,10 +6,23 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller{
 
+
+
+public function __construct()
+{
+   $this-> middleware('auth');
+}
+
 public function index(){
 
-    dd('desdemuro');
+   
+    
+    
+    return view('layouts.dashboard');
 }
 
 }
+
+
+
 
