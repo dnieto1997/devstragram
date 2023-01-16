@@ -18,10 +18,16 @@ public function __construct()
     public function index(User $user){
 
        
-        return view('layouts.dashboard');
+        return view('layouts.dashboard',[
+            'user'=>$user
+        ]);
     }
 
+    public function create(){
 
+       
+       return view('posts.create');
+    }
 
 
 
