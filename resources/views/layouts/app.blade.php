@@ -23,19 +23,26 @@
 
 
 @auth
-<p>Autenticado</p>
+
+<form method="POST" action="{{route('logout')}}">
+    @csrf
+
+
+    <a class="font-bold  text-gray-600 text-sm"  href="#">Hola <span class="font-normal">{{auth()->user()->username}}</span></a>
+    <button type="submit" class="font-bold uppercase text-gray-600 text-sm">Cerrar Sesion</button>
+
+    
+</form>
 @endauth
+
 
 
 @guest
 <nav class="flex gap-2 items-center" >
 
     <a class="font-bold uppercase text-gray-600 text-sm"  href="{{route('login')}}">Login</a>
-    <a  class="font-bold uppercase text-gray-600 text-sm" href="{{route('registrar')}}">
-        Crear cuenta
-    
-    </a>
-    
+    <a  class="font-bold uppercase text-gray-600 text-sm" href="{{route('registrar')}}">Crear cuenta</a>
+
     </nav>
 @endguest
 

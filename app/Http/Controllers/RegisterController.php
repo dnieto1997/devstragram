@@ -49,8 +49,7 @@ auth()-> attempt([
 
 
 
-
-return redirect()-> route('posts.index');
+return redirect()->route('posts.index', auth()->user()->username );
 
 }
 

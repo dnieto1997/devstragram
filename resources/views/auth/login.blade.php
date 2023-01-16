@@ -58,7 +58,11 @@ border-red-500 @enderror" value={{old('email')}} >
 @enderror
 </div>
 
+<div class="mb-5">
 
+    <input type="checkbox" name="recordar"><label class=" text-gray-500  text-center text-sm"> Mantener Sesion</label>
+
+</div>
 
 
 
