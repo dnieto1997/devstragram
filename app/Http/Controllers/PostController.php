@@ -15,10 +15,10 @@ public function __construct()
 }
 
 
-    public function index(){
+    public function index(User $user){
 
        
-     return view('layouts.dashboard');   
+        return view('layouts.dashboard');
     }
 
 
