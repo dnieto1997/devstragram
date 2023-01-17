@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 @vite('resources/css/app.css')
 
+@stack('styles')
+
 <title>Devstagram - @yield('titulo')</title>
 
     </head>
