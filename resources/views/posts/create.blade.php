@@ -18,13 +18,13 @@ Crea una nueva publicacion
 
   
 
-    <form action="/imagenes" id="dropzone"  class="dropzone border-dashed border-2 w-full h-96 rounded flex-col justify-center items-center"> 
-
+    <form action="{{route('imagenes.store')}}" method="POST" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center" enctype="multipart/form-data">
+@csrf
 </form>
 </div>
 <div class="md:w-6/12 bg-white p-10 rounded-lg shadow-xl mt-10 md:mt-0">
 
-    <form id ="dropzone"action="{{route('imagenes.store')}}" method="POST" enctype="multipart/form-data" novalidate>
+    <form id ="dropzone"action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data" novalidate>
         
     <div class="mb-5">
     <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold text-center"> Titulo </label>
@@ -49,6 +49,19 @@ Crea una nueva publicacion
         
     @enderror
     
+    </div>
+
+
+    <div class="mb-5">  
+
+  <input name="imagen" type="hidden" value="{{old('imagen')}}"/>
+  @error('imagen')
+    
+  <p class=" bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center" >{{$message}}</p>
+      
+  @enderror 
+  
+
     </div>
     <input type="submit" value="Crear Publicacion" class="bg-sky-600 hover:bg-sky-700 transition-colors curson-pointer uppercase font-bold w-full p-3 text-white rounded-lg"  />
 
